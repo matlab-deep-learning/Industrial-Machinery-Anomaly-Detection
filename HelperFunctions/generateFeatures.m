@@ -10,15 +10,15 @@ function [featureTable,outputTable] = generateFeatures(inputData)
 %  outputTable: A table containing the computation results.
 %
 % This function computes features:
-%  ch1_stats/Col1_THD
-%  ch2_stats/Col1_CrestFactor
+%  ch1_stats/Col1_CrestFactor
+%  ch1_stats/Col1_Kurtosis
+%  ch1_stats/Col1_RMS
+%  ch1_stats/Col1_Std
 %  ch2_stats/Col1_Mean
-%  ch2_stats/Col1_PeakValue
 %  ch2_stats/Col1_RMS
-%  ch2_stats/Col1_SINAD
-%  ch2_stats/Col1_SNR
-%  ch2_stats/Col1_ShapeFactor
+%  ch2_stats/Col1_Skewness
 %  ch2_stats/Col1_Std
+%  ch3_stats/Col1_CrestFactor
 %  ch3_stats/Col1_SINAD
 %  ch3_stats/Col1_SNR
 %  ch3_stats/Col1_THD
@@ -51,14 +51,8 @@ while hasdata(outputEnsemble)
     
     % Get all input variables.
     ch1 = readMemberData(member,"ch1",["Col1"]);
-%     iv = seconds(0:1:height(ch1)-1)';
-%     ch1.AutoIV = iv;
     ch2 = readMemberData(member,"ch2",["Col1"]);
-%     iv = seconds(0:1:height(ch2)-1)';
-%     ch2.AutoIV = iv;
     ch3 = readMemberData(member,"ch3",["Col1"]);
-%     iv = seconds(0:1:height(ch3)-1)';
-%     ch3.AutoIV = iv;
     
     % Initialize a table to store results.
     memberResult = table;
@@ -66,20 +60,22 @@ while hasdata(outputEnsemble)
     %% SignalFeatures
     try
         % Compute signal features.
-%         inputSignal = ch1.Col1;
         inputSignal = ch1;
-        Col1_THD = thd(inputSignal);
+        Col1_CrestFactor = peak2rms(inputSignal);
+        Col1_Kurtosis = kurtosis(inputSignal);
+        Col1_RMS = rms(inputSignal,'omitnan');
+        Col1_Std = std(inputSignal,'omitnan');
         
         % Concatenate signal features.
-        featureValues = Col1_THD;
+        featureValues = [Col1_CrestFactor,Col1_Kurtosis,Col1_RMS,Col1_Std];
         
         % Package computed features into a table.
-        featureNames = "Col1_THD";
+        featureNames = ["Col1_CrestFactor","Col1_Kurtosis","Col1_RMS","Col1_Std"];
         ch1_stats = array2table(featureValues,'VariableNames',featureNames);
     catch
         % Package computed features into a table.
-        featureValues = NaN(1,1);
-        featureNames = "Col1_THD";
+        featureValues = NaN(1,4);
+        featureNames = ["Col1_CrestFactor","Col1_Kurtosis","Col1_RMS","Col1_Std"];
         ch1_stats = array2table(featureValues,'VariableNames',featureNames);
     end
     
@@ -90,27 +86,22 @@ while hasdata(outputEnsemble)
     %% SignalFeatures
     try
         % Compute signal features.
-%         inputSignal = ch2.Col1;
         inputSignal = ch2;
-        Col1_CrestFactor = peak2rms(inputSignal);
         Col1_Mean = mean(inputSignal,'omitnan');
-        Col1_PeakValue = max(abs(inputSignal));
         Col1_RMS = rms(inputSignal,'omitnan');
-        Col1_SINAD = sinad(inputSignal);
-        Col1_SNR = snr(inputSignal);
-        Col1_ShapeFactor = rms(inputSignal,'omitnan')/mean(abs(inputSignal),'omitnan');
+        Col1_Skewness = skewness(inputSignal);
         Col1_Std = std(inputSignal,'omitnan');
         
         % Concatenate signal features.
-        featureValues = [Col1_CrestFactor,Col1_Mean,Col1_PeakValue,Col1_RMS,Col1_SINAD,Col1_SNR,Col1_ShapeFactor,Col1_Std];
+        featureValues = [Col1_Mean,Col1_RMS,Col1_Skewness,Col1_Std];
         
         % Package computed features into a table.
-        featureNames = ["Col1_CrestFactor","Col1_Mean","Col1_PeakValue","Col1_RMS","Col1_SINAD","Col1_SNR","Col1_ShapeFactor","Col1_Std"];
+        featureNames = ["Col1_Mean","Col1_RMS","Col1_Skewness","Col1_Std"];
         ch2_stats = array2table(featureValues,'VariableNames',featureNames);
     catch
         % Package computed features into a table.
-        featureValues = NaN(1,8);
-        featureNames = ["Col1_CrestFactor","Col1_Mean","Col1_PeakValue","Col1_RMS","Col1_SINAD","Col1_SNR","Col1_ShapeFactor","Col1_Std"];
+        featureValues = NaN(1,4);
+        featureNames = ["Col1_Mean","Col1_RMS","Col1_Skewness","Col1_Std"];
         ch2_stats = array2table(featureValues,'VariableNames',featureNames);
     end
     
@@ -121,22 +112,22 @@ while hasdata(outputEnsemble)
     %% SignalFeatures
     try
         % Compute signal features.
-%         inputSignal = ch3.Col1;
         inputSignal = ch3;
+        Col1_CrestFactor = peak2rms(inputSignal);
         Col1_SINAD = sinad(inputSignal);
         Col1_SNR = snr(inputSignal);
         Col1_THD = thd(inputSignal);
         
         % Concatenate signal features.
-        featureValues = [Col1_SINAD,Col1_SNR,Col1_THD];
+        featureValues = [Col1_CrestFactor,Col1_SINAD,Col1_SNR,Col1_THD];
         
         % Package computed features into a table.
-        featureNames = ["Col1_SINAD","Col1_SNR","Col1_THD"];
+        featureNames = ["Col1_CrestFactor","Col1_SINAD","Col1_SNR","Col1_THD"];
         ch3_stats = array2table(featureValues,'VariableNames',featureNames);
     catch
         % Package computed features into a table.
-        featureValues = NaN(1,3);
-        featureNames = ["Col1_SINAD","Col1_SNR","Col1_THD"];
+        featureValues = NaN(1,4);
+        featureNames = ["Col1_CrestFactor","Col1_SINAD","Col1_SNR","Col1_THD"];
         ch3_stats = array2table(featureValues,'VariableNames',featureNames);
     end
     
