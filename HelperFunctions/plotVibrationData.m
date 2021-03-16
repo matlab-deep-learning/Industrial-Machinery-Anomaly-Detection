@@ -14,31 +14,31 @@ figure("Color", "W")
 tiledlayout(3,1)
 
 nexttile()
-plot(1:length(beforeMaintenance.ch1{ensMember}),beforeMaintenance.ch1{ensMember}, 'r')
 hold on
-plot(1:length(afterMaintenance.ch1{ensMember}),afterMaintenance.ch1{ensMember}, 'b')
+plot(1:length(afterMaintenance.ch1{ensMember}),afterMaintenance.ch1{ensMember})
+plot(1:length(beforeMaintenance.ch1{ensMember}),beforeMaintenance.ch1{ensMember})
 hold off
-legend(["Before Maintenance", "After Maintenance"])
+legend(["After Maintenance", "Before Maintenance"])
 ylabel("Vibration Data")
 xlabel("Observations")
 title("Channel 1")
 
 nexttile()
-plot(1:length(beforeMaintenance.ch2{ensMember}),beforeMaintenance.ch2{ensMember}, 'r')
 hold on
-plot(1:length(afterMaintenance.ch2{ensMember}),afterMaintenance.ch2{ensMember}, 'b')
+plot(1:length(afterMaintenance.ch2{ensMember}),afterMaintenance.ch2{ensMember})
+plot(1:length(beforeMaintenance.ch2{ensMember}),beforeMaintenance.ch2{ensMember})
 hold off
-legend(["Before Maintenance", "After Maintenance"])
+legend(["After Maintenance", "Before Maintenance"])
 ylabel("Vibration Data")
 xlabel("Observations")
 title("Channel 2")
 
 nexttile()
-plot(1:length(beforeMaintenance.ch3{ensMember}),beforeMaintenance.ch3{ensMember}, 'r')
 hold on
-plot(1:length(afterMaintenance.ch3{ensMember}),afterMaintenance.ch3{ensMember}, 'b')
+plot(1:length(afterMaintenance.ch3{ensMember}),afterMaintenance.ch3{ensMember})
+plot(1:length(beforeMaintenance.ch3{ensMember}),beforeMaintenance.ch3{ensMember})
 hold off
-legend(["Before Maintenance", "After Maintenance"])
+legend(["After Maintenance", "Before Maintenance"])
 ylabel("Vibration Data")
 xlabel("Observations")
 title("Channel 3")
