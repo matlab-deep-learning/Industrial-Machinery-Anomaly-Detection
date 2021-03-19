@@ -6,7 +6,8 @@
 This is a Predictive Maintenance example that trains a deep learning autoencoder on normal operating data of an industrial machine. The example walks through exctracting relevant features from the raw data, setting up and training an LSTM-based autoencoder to detect abnormal behavior, and evaluating the results on a validation set.
 This demo is implemented as a MATLAB project and will require you to open the project to run it. The project will manage all paths and shortcuts you need. 
 
-![Data before and after maintenance](Images/Data.png)
+ ![Data before and after maintenance](Images/Data.png)
+ ![Reconstruction error before and after maintenance](Images/ReconstructionError.PNG) 
 
 ## Setup 
 To Run:
