@@ -1,13 +1,13 @@
 # Industrial Machinery Anomaly Detection using Autoencoders
 <!-- This is the "Title of the contribution" that was approved during the Community Contribution Review Process --> 
 
-[![View <File Exchange Title> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  
-<!-- Add this icon to the README if this repo also appears on File Exchange via the "Connect to GitHub" feature --> 
+[![View <Industrial Machinery Anomaly Detection using Autoencoders> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  
 
 This is a Predictive Maintenance example that trains a deep learning autoencoder on normal operating data of an industrial machine. The example walks through exctracting relevant features from the raw data, setting up and training an LSTM-based autoencoder to detect abnormal behavior, and evaluating the results on a validation set.
 This demo is implemented as a MATLAB project and will require you to open the project to run it. The project will manage all paths and shortcuts you need. 
 
-<!--- If your project includes a visualation or any images or an App please include a screenshot in this README --->
+ ![Data before and after maintenance](Images/Data.png)
+ ![Reconstruction error before and after maintenance](Images/ReconstructionError.PNG) 
 
 ## Setup 
 To Run:
@@ -22,9 +22,6 @@ Requires MATLAB release R#### or newer
 - [Predictive Maintenance Toolbox](https://www.mathworks.com/help/predmaint/index.html)
 - [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
 
-## Getting Started 
-Information about Getting Started
-<!--- List or link to any relevent Documentation to help the user Get Started --->
 
 ## Examples
 To learn how to use this in testing workflows, see [Examples](/examples/). 
