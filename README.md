@@ -22,7 +22,7 @@ To Run:
 ### MathWorks Products (http://www.mathworks.com)
 
 Requires MATLAB release R2020b or newer and:
-- [Predictive Maintenance Toolbox](https://www.mathworks.com/help/predmaint/index.html)
+- [Predictive Maintenance Toolbox](https://www.mathworks.com/products/predictive-maintenance.html)
 - [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
 
 ## License
