@@ -1,15 +1,14 @@
 # Industrial Machinery Anomaly Detection using an Autoencoder
-<!-- This is the "Title of the contribution" that was approved during the Community Contribution Review Process --> 
 
 [![View <Industrial Machinery Anomaly Detection using an Autoencoder> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  
 
-This is a Predictive Maintenance example that trains a deep learning autoencoder on normal operating data of an industrial machine. The example walks through: 
+This Predictive Maintenance example trains a deep learning autoencoder on normal operating data from an industrial machine. The example walks through: 
 - Extracting relevant features from industrial vibration timeseries data using the Diagnostic Feature Designer app
 - Setting up and training an LSTM-based autoencoder to detect abnormal behavior
 - Evaluating the results on a validation dataset
 
 ## Setup 
-This demo is implemented as a MATLAB project and will require you to open the project to run it. The project will manage all paths and shortcuts you need. 
+This demo is implemented as a MATLAB® project and will require you to open the project to run it. The project will manage all paths and shortcuts you need. 
 
 To Run:
 1. Open the MATLAB Project `AnomalyDetection.prj`
@@ -19,11 +18,11 @@ To Run:
 <img src="Images/Data.png" height="400">
 <img src="Images/ReconstructionError.PNG" height="400">
 
-### MathWorks Products (http://www.mathworks.com)
+### MathWorks® Products (http://www.mathworks.com)
 
-Requires MATLAB release R2020b or newer and:
-- [Predictive Maintenance Toolbox](https://www.mathworks.com/products/predictive-maintenance.html)
-- [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
+Requires MATLAB® release R2020b or newer and:
+- [Predictive Maintenance Toolbox™](https://www.mathworks.com/products/predictive-maintenance.html)
+- [Deep Learning Toolbox™](https://www.mathworks.com/products/deep-learning.html)
 
 ## License
 The license for Industrial Machinery Anomaly Detection using an Autoencoder is available in the [license.txt](license.txt) file in this GitHub repository.
