@@ -1,6 +1,6 @@
 # Industrial Machinery Anomaly Detection using an Autoencoder
 
-[![View <Industrial Machinery Anomaly Detection using an Autoencoder> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  
+[![View <Industrial Machinery Anomaly Detection using an Autoencoder> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/90752-industrial-machinery-anomaly-detection-using-an-autoencoder)
 
 This Predictive Maintenance example trains a deep learning autoencoder on normal operating data from an industrial machine. The example walks through: 
 - Extracting relevant features from industrial vibration timeseries data using the Diagnostic Feature Designer app
