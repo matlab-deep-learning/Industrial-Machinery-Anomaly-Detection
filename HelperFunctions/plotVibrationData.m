@@ -6,7 +6,7 @@ arguments
     ensMember(1,1) double {mustBeInRange(ensMember,1,20,"inclusive")} = 1
 end
 
-tF = trainData.label == 1;
+tF = trainData.label == "After";
 afterMaintenance = trainData(tF,:);
 beforeMaintenance = trainData(~tF,:);
 
