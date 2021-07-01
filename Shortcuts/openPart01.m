@@ -3,4 +3,4 @@ function openPart01
 % to do whatever you'd like when clicking the project shortcut,
 % e.g., loading data, running an app, or loading a doc page.
 
-open("Part01_DataPrepFeatureExtraction.mlx")
+open("Part1_DataPrepFeatureExtraction.mlx")

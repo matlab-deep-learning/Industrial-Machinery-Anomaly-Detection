@@ -3,4 +3,4 @@ function openPart02
 % to do whatever you'd like when clicking the project shortcut,
 % e.g., loading data, running an app, or loading a doc page.
 
-open("Part02_Modeling.mlx")
+open("Part2_LSTMAutoencoder.mlx")
